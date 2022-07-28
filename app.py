@@ -23,7 +23,7 @@ def get_hit_count():
 def hello():
     count = get_hit_count()
     username = getuser()
-    return f'Hello {username}! I have been seen {format(count)} times'
+    return f'Hello {username}! I have been seen {count} times'
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
