@@ -1,7 +1,7 @@
 import time
 import redis
 from flask import Flask
-from getpass import getuser
+
 
 app = Flask(__name__)
 cache = redis.Redis(host='redis', port=6379)
@@ -22,8 +22,7 @@ def get_hit_count():
 @app.route('/')
 def hello():
     count = get_hit_count()
-    username = getuser()
-    return f'Hello {username}! I have been seen {count} times'
+    return 'Hello World! I have been seen {} times.\n'.format(count)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
